@@ -17,11 +17,32 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className={`text-2xl font-serif font-black tracking-tighter transition-colors ${scrolled ? 'text-amber-900' : 'text-white'}`}>
+        {/* <div className={`text-2xl font-serif font-black tracking-tighter transition-colors ${scrolled ? 'text-amber-900' : 'text-white'}`}>
           CAFE TORRES<span className="text-amber-600 italic">VIP</span>
+        </div> */}
+
+        <a href="/" className="flex items-center">
+        <div
+          className={`
+            transition-all duration-300
+            ${scrolled
+              ? "bg-transparent"
+              : "bg-white px-6 py-3 shadow-md rounded-b-2xl"
+            }
+           `}>
+
+            <img
+            src = "/logocafe.png"
+            alt = "LOGO CAFE TORRES VIP"
+            className={`h-20 w-auto transition-all duration-300 ${
+              scrolled ? "opacity-100" : "opacity-90"}
+        `}
+        />
         </div>
+
+        </a>
         
         {/* Desktop Links */}
         <div className={`hidden md:flex gap-8 font-medium ${scrolled ? 'text-stone-700' : 'text-white/90'}`}>
